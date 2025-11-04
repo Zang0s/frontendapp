@@ -1,13 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import AppContext from '../data/AppContext';
+import useData from '../data/useData';
 
 function MyContainer({ element: Element }) {
-    const context = useContext(AppContext);
-    const items = context.items;
-    const dispatch = context.dispatch;
+    const items = useData();
     return (
         <Container>
             <Row>

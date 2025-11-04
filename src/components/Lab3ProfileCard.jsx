@@ -1,14 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import ProfileParagraph from './ProfileParagraph';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import RatingBar from './RatingBar';
-import AppContext from '../data/AppContext';
 import { useNavigate } from 'react-router-dom';
+import useDispatch from '../data/useDispatch';
 
 function Lab3ProfileCard({ id, name, email, phone, birthDate, rating = 0, checked = false }) {
-  const context = useContext(AppContext);
-  const dispatch = context.dispatch;
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleEdit = () => {
     navigate(`/lab4/edit/${id}`);
